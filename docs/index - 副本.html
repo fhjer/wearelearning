@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title文档中心></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css"> 默认主题-->
+  <!-- docsify的dark主题   <link rel="stylesheet" href="vender/themes/dark.css"> -->
+ <!-- <link rel="stylesheet" href="vender/themes/theme-defaults.css"> -->
+  <link rel="stylesheet" href="vender/themes/theme-simple.css">
+  <!--<link rel="stylesheet" href="vender/themes/theme-simple-dark.css">-->
+  <!--多个主题时，会使用最下面的一个-->
+ <!--  <link rel="stylesheet" href="themes/typora-vue-theme-master/vue-dark.css"> 侧边栏没了-->
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '在线文档系统',
+	  loadSidebar: true,
+	  subMaxLevel: 2,
+	  loadNavbar: true,
+	  relativePath: true,
+	 <!-- coverpage: true,-->
+	  auto2top: true,
+	    
+	  alias: {
+		'/':'/zh-cn/',
+        '/_sidebar.md': '/zh-cn/_sidebar.md',
+		<!--'/.*/_sidebar.md': '/_sidebar.md',-->
+		'/.*/_navbar.md': '/_navbar.md'
+		<!--'/_coverpage.md': '/zh-cn/_coverpage.md',-->
+	  },
+	  //全局搜索
+	  search: {
+		maxAge: 86400000,//过期时间，单位秒，当前为一天
+		path: 'auto',
+		//支持本地化
+		placeholder: {
+			'en-us': 'Type to search',
+			'/': '搜索'
+		}
+		//支持本地化
+		noData: {
+			'en-us': 'No Results',
+			'/': '找不到结果'
+		}
+		//搜索标题的最大层级，1-6
+		depth: 3
+	  },
+	  
+	  
+	  //页签设置
+	  tabs: {
+		persist    : true,      // default
+		sync       : true,      // default
+		theme      : 'classic', // default
+		tabComments: true,      // default
+		tabHeadings: true       // default
+	  },
+	  
+      //主题组件
+	  themeable: {
+		readyTransition: true,
+		responsiveTables: true
+	  }
+    }
+  </script>
+  <!--  <script src="//unpkg.com/docsify/lib/docsify.js"></script> -->
+  <script src="/vender/docsify.js"></script>
+  <script src="vender/plugins/docsify-themeable.js"></script>
+  <script src="/vender/search.min.js"></script>
+  <!--页面页签插件-->
+  <script src="/vender/plugins/docsify-tabs.js"></script>
+  <script src="/vender/plugins/docsify-tabs.min.js"></script>
+  
+
+ <!-- <script src="zh-cn/vender/docsify.min.js"></script> -->
+</body>
+</html>
