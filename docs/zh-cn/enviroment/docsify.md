@@ -26,23 +26,23 @@ docsify init ./docs
 
 ## 开始写文档
 
-初始化成功后，可以看到 `./docs` 目录下创建的几个文件
+初始化成功后，可以看到 `./docs` 目录下创建的几个文件。
 
-- `index.html` 入口文件
-- `README.md` 会做为主页内容渲染
-- `.nojekyll` 用于阻止 GitHub Pages 会忽略掉下划线开头的文件
+- `index.html`： 为入口文件。
+- `README.md` ：会做为主页内容渲染。
+- `.nojekyll` ：用于阻止 GitHub Pages 会忽略掉下划线开头的文件。
 
 直接编辑 `docs/README.md` 就能更新网站内容，当然也可以[写多个页面](https://docsify.js.org/#/zh-cn/more-pages)。
 
 ## 本地预览
 
-在`docs`目录下运行命令：
+在`docs`目录下运行命令：`docsify serve`。
 
-`docsify serve`
+或者在`docs`目录外，执行命令：`docsify serve docs`。
 
 可以实时的预览，默认访问 [http://localhost:3000](http://localhost:3000/) 。
 
-## index.HTML文件
+## index.html文件
 
 ```html
 <!DOCTYPE html>
@@ -175,7 +175,7 @@ docsify init ./docs
 
 ```
 
-
+## 
 
 
 
