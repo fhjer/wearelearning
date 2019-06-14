@@ -175,7 +175,11 @@ docsify init ./docs
 
 ```
 
-## 
+## 脚本查找
+
+可从此网站下载js脚本和css文件：
+
+https://cdn.jsdelivr.net/npm/
 
 
 

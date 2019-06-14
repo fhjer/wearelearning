@@ -2,13 +2,9 @@
 
 ## 主题说明
 
-可从此网站下载js脚本和css文件：
+除去docsify本身自带的集中主题外，还有一种主题：`docsify-themeable`。
 
-https://cdn.jsdelivr.net/npm/
-
-### docsify-themeable
-
-具有三种主题，可对其主题进行定制修改。
+它本身具有三种主题，可对其主题进行定制修改。
 
 <https://jhildenbiddle.github.io/docsify-themeable/#/>
 
@@ -39,9 +35,23 @@ markdown用法：
 /zh-cn/pdfEmbed.pdf
 ```
 
+### 导出PDF
+
+`docsify-pdf-converter`插件将docsify文档导出为PDF格式的文档。
+
+#### 安装
+
+以管理员权限运行cmd.exe，执行安装命令：
+
+`npm install --save-dev docsify-pdf-converter`
+
+#### 配置
+
 
 
 ### Alerts样式
+
+`docsify-plugin-flexible-alerts.min.js`提供多种告警样式。
 
 > [!Tip]
 >

@@ -44,9 +44,9 @@
 
    ![003](../../img/003.png)
 
-   <img src="../../img/003.png" alt="003">
+   
 
-8. 配置GitHub Pages：配置Source为`master barnch /docs folder。
+8. 配置GitHub Pages：配置Source为`master barnch /docs folder`。
 
    项目会自动发布，访问发布的网址可查看发布结果。
 
