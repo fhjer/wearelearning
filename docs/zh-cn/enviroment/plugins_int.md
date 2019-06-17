@@ -39,15 +39,121 @@ markdown用法：
 
 `docsify-pdf-converter`插件将docsify文档导出为PDF格式的文档。
 
-#### 安装
+#### 安装插件
 
 以管理员权限运行cmd.exe，执行安装命令：
 
 `npm install --save-dev docsify-pdf-converter`
 
-#### 配置
+若直接执行以上安装命令，安装失败，则可依次执行以下命令：
 
+```bash
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+cnpm i puppeteer
+cnpm install --save-dev docsify-pdf-converter
+```
 
+#### 导出参数配置
+
+创建配置文件`.docsifytopdfrc.<js|json|yaml>`，或在当前项目的 `package.json`文件中增加`"docsifytopdf"`配置。
+
+配置文件 `.docsifytopdfrc.js` 内容如下：
+
+```js
+module.exports = {
+  contents: [ "docs/_sidebar.md" ], // array of "table of contents" files path
+  pathToPublic: "pdf/readme.pdf", // path where pdf will stored
+  pdfOptions: "<options for puppeteer.pdf()>", // reference: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions
+  removeTemp: true, // remove generated .md and .html or not
+  emulateMedia: "screen", // mediaType, emulating by puppeteer for rendering pdf, 'print' by default (reference: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageemulatemediamediatype)
+}
+```
+
+在`package.json`中增加脚本：
+
+```json
+{
+  "scripts": {
+    "convert": "node_modules/.bin/docsify-pdf-converter"
+  }
+}
+```
+
+执行命令：
+
+```sh
+npm run convert
+```
+
+#### FAQs
+
+**问题描述1**：
+
+执行转换命令后，系统报错：
+
+```bash
+internal/modules/cjs/loader.js:584
+    throw err;
+    ^
+
+Error: Cannot find module 'C:\Program Files\nodejs\node_global\node_modules\docsify-pdf-converter\.bin\cli.js'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:582:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:508:25)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! docsify-pdf-converter@2.1.0-beta.0 convert: `docsify-pdf-converter`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the docsify-pdf-converter@2.1.0-beta.0 convert script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+```
+
+**解决办法**：
+
+1. 下载插件源文件：<https://github.com/meff34/docsify-to-pdf-converter>。
+2. 解压缩后将`.bin`文件夹拷贝至`C:\Program Files\nodejs\node_global\node_modules\docsify-pdf-converter\`。
+
+**问题描述2**：
+
+执行转换命令后，系统报错：
+
+```bash
+internal/modules/cjs/loader.js:584
+    throw err;
+    ^
+
+Error: Cannot find module 'rcfile'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:582:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:508:25)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (C:\Program Files\nodejs\node_global\node_modules\docsify-pdf-converter\.bin\cli.js:3:16)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! docsify-pdf-converter@2.1.0-beta.0 convert: `docsify-pdf-converter`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the docsify-pdf-converter@2.1.0-beta.0 convert script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+```
+
+**解决办法**：
+
+执行命令，安装rcfile：
+
+cnpm install --save rcfile
 
 ### Alerts样式
 

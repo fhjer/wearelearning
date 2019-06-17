@@ -1,0 +1,11 @@
+{
+  "mainMdFilename": "TEST-documentation.md",  
+  "contents": "./docs/zh-cn/_sidebar.md",
+  "pathToPublic": "./pdf/onlineHelp.pdf", 
+  "pdfOptions": {
+  "format": "A4"
+  }, 
+  "removeTemp": true,
+  "emulateMedia": "screen",
+  "pathToDocsifyEntryPoint": "."
+}
