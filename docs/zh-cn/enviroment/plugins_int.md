@@ -113,7 +113,7 @@ npm run convert
 
 #### FAQs
 
-> [!Attention]
+> [!Tip]
 >
 > 转换成功的前提：
 >
