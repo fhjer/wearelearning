@@ -194,12 +194,32 @@ MD文件中页签插件，使用说明路径：
 
 #### 内部标题1
 
+> 这是引言
+
 你好!
+
+| head1 | head2 |
+| ----- | ----- |
+| note  | note  |
+
+列表
+
+- list 1
+- list 2
+- 。。。
 
 #### 内部标题2
 
 ### **English**
 
+#### Heading1
+
 Hello there!
+
+#### Heading2
+
+> this is a test.
+
+we can try.
 
 <!-- tabs:end -->
