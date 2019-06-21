@@ -1,0 +1,14 @@
+/*Content Style Setting*/
+
+:root {
+	--content-max-width              : 65em;
+	--content-theme-background       : #e3e3e3;
+	--content-theme-text             : #e96900;
+}
+
+/*Sidebar Style Settings*/
+
+:root {
+	--sidebar-background             : #151d2a;
+	--sidebar-nav-link-color         : #ffffff;
+}
