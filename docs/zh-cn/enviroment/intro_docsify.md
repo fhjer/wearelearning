@@ -12,8 +12,23 @@
 
 推荐安装 `docsify-cli` 工具，可以方便创建及本地预览文档网站。
 
+### 在线安装
+
 ```bash
 npm i docsify-cli -g
+```
+
+### 离线安装
+
+若需要安装在内网中，可将在线安装时生成的文件夹docsify-cli、文件docsify和docsify.cmd拷贝到内网，并放置在nodejs的全局安装路径下。
+
+示例：
+
+```bash
+安装node.js时设置的环境变量如下：
+用户变量Path：`C:\Program Files\nodejs\node_global`
+系统变量NODE_PATH：`C:\Program Files\nodejs\node_global\node_modules`
+将`docsify`和`docsify.cmd`两个文件拷贝至Path下，文件夹`docsify-cli`拷贝至NODE_PATH下。
 ```
 
 ## 初始化项目
@@ -36,11 +51,21 @@ docsify init ./docs
 
 ## 本地预览
 
+### 默认访问地址和端口
+
 在`docs`目录下运行命令：`docsify serve`。
 
 或者在`docs`目录外，执行命令：`docsify serve docs`。
 
 可以实时的预览，默认访问 [http://localhost:3000](http://localhost:3000/) 。
+
+### 指定访问地址和端口
+
+```bash
+docsify serve <path> [--open false] [--port 3000]
+```
+
+有多个docs项目时，同一时间执行一个上述命令，即只能本预览一个文档项目。否则报错。
 
 ## index.html文件
 
