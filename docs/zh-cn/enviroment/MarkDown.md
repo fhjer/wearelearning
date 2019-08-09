@@ -14,11 +14,11 @@
 
 size=40
 
-![](../../img/timg.jpg':size=40')
+![](../../img/timg.jpg  ':size=40')
 
 size=40%
 
-![](../../img/timg.jpg':size=40%')
+![](../../img/timg.jpg  ':size=40%')
 
 #### 第二种方法：
 
