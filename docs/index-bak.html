@@ -1,75 +1,3 @@
-# Docsify
-
-我们来了解一下docsify+markdown搭建的在线文档。
-
-目前docsify环境只是我本地的环境，在线环境如何搭建后续学习后再慢慢总结。
-
-## 官方文档
-
-<https://docsify.js.org/#/zh-cn>
-
-## 安装docsify
-
-推荐安装 `docsify-cli` 工具，可以方便创建及本地预览文档网站。
-
-### 在线安装
-
-```bash
-npm i docsify-cli -g
-```
-
-### 离线安装
-
-若需要安装在内网中，可将在线安装时生成的文件夹docsify-cli、文件docsify和docsify.cmd拷贝到内网，并放置在nodejs的全局安装路径下。
-
-示例：
-
-```bash
-安装node.js时设置的环境变量如下：
-用户变量Path：`C:\Program Files\nodejs\node_global`
-系统变量NODE_PATH：`C:\Program Files\nodejs\node_global\node_modules`
-将`docsify`和`docsify.cmd`两个文件拷贝至Path下，文件夹`docsify-cli`拷贝至NODE_PATH下。
-```
-
-## 初始化项目
-
-如果想在项目的 `./docs` 目录里写文档，直接通过 `init` 初始化项目。
-
-```bash
-docsify init ./docs
-```
-
-## 开始写文档
-
-初始化成功后，可以看到 `./docs` 目录下创建的几个文件。
-
-- `index.html`： 为入口文件。
-- `README.md` ：会做为主页内容渲染。
-- `.nojekyll` ：用于阻止 GitHub Pages 会忽略掉下划线开头的文件。
-
-直接编辑 `docs/README.md` 就能更新网站内容，当然也可以[写多个页面](https://docsify.js.org/#/zh-cn/more-pages)。
-
-## 本地预览
-
-### 默认访问地址和端口
-
-在`docs`目录下运行命令：`docsify serve`。
-
-或者在`docs`目录外，执行命令：`docsify serve docs`。
-
-可以实时的预览，默认访问 [http://localhost:3000](http://localhost:3000/) 。
-
-### 指定访问地址和端口
-
-```bash
-docsify serve <path> [--open false] [--port 3000]
-```
-
-有多个docs项目时，同一时间执行一个上述命令，即只能本预览一个文档项目。否则报错。
-
-## index.html文件
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,18 +7,22 @@ docsify serve <path> [--open false] [--port 3000]
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
  <!-- <link rel="stylesheet" href="vender/themes/theme-defaults.css"> -->
-  <link rel="stylesheet" href="vender/themes/theme-simple.css">
+  <link rel="stylesheet" href="vender/themes/buble.css">
+  <!--渲染定制-->
+  <!-- <link rel="stylesheet" href="vender/themes/theme-simple-custom.css"> -->
+  <link rel="stylesheet" href="vender/themes/css-v1.3.css">
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
       name: '在线文档系统',
-	  loadSidebar: true,
-	  subMaxLevel: 3,
+	  loadSidebar: true, //设置为 true 后会加载 _sidebar.md 文件
+	  MaxLevel: 1,
+	  subMaxLevel: 2,   //自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能。
 	  loadNavbar: true,
-	  relativePath: true,
-	  auto2top: true,	    
+	  relativePath: true,//可以使用相对路径，目前并未成功
+	  auto2top: true,	//切换页面后是否自动跳转到页面顶部。    
 	  alias: {
 		'/':'/zh-cn/',
         '/_sidebar.md': '/zh-cn/_sidebar.md',
@@ -197,20 +129,3 @@ docsify serve <path> [--open false] [--port 3000]
 
 </body>
 </html>
-
-```
-
-## 脚本查找
-
-可从此网站下载js脚本和css文件：
-
-https://cdn.jsdelivr.net/npm/
-
-
-
-
-
-
-
-
-

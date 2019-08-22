@@ -1,0 +1,16 @@
+https://doc.open-uc.cn/#/iflow/process
+
+此文档有右侧侧边栏 显示单个md文档内部的标题
+
+CSS使用以下两个：
+
+<link rel="stylesheet" href="vender/themes/buble.css"> //只能用buble.css，换成其他css就不行，右侧侧边栏的位置不对
+<link rel="stylesheet" href="vender/themes/css-v1.3.css">
+
+将docsify的以下2个配置项修改为：
+
+MaxLevel: 1,
+subMaxLevel: 2,   //自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能。
+
+注意：
+如果将subMaxLevel的取值修改为3，右侧侧边栏中的目录则混乱，有3级标题时，仅用3级标题生成目录，因此将其取值设置为了2。

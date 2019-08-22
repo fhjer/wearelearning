@@ -27,7 +27,7 @@
 
 /*link style settings*/
 
-: root {
+:root {
 	--link-color                        : #0000ff;
 	--link-color--active                : #ff0000;
 	--link-color--hover                 : #0000ff;
@@ -36,3 +36,5 @@
 	--link-text-decoration-color        : #ff0000;
 	--link-text-decoration-color--hover : #ee9a00;
 }
+
+

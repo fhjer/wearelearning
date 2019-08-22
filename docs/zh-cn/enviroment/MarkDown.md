@@ -20,7 +20,7 @@
 
 示例：
 
-size=40
+size=100
 
 ![40](../../img/timg.jpg   ':size=100')
 
@@ -39,6 +39,7 @@ size=40%
 > [!Tip]
 >
 > 使用img标签加载的图片，本地发布是可以看到图片的，但在GitHub上看不到图片，因为github上的访问路径在#前加了路由名，跟实际路由是不一样的，所以找不到图片。
+
 
 ## 特殊符号展示
 
@@ -109,26 +110,31 @@ Typora使用插入表格（Ctrl+T），可以直接选择行列数，也有相�
     <li>跨列： colspan的参数就是要跨的列数</li>
 </ul>
 </p>
-<table frame="border" border="1">    
-    <tr>
-        <th rowspan="2">真实情况</th>
-        <th colspan="2" align="center">预测结果</th>
-    </tr>
-    <tr>
-        <td>正例</td>
-        <td>反例</td>
-    </tr>
-    <tr>
-        <td>正例</td>
-        <td>TP(真正例)</td>
-        <td>FN(假反例)</td>
-    </tr>
-    <tr>
-        <td>反例</td>
-        <td>FP(假正例)</td>
-        <td>TN(真反例)</td>
-    </tr>
-</table>
+<table frame="border" border="1">
+    <thead>
+        <tr>
+        	<th rowspan="2">真实情况</th>
+        	<th colspan="2" align="center">预测结果</th>
+    	</tr>
+        <tr>
+       	 	<td>正例</td>
+        	<td>反例</td>
+    	</tr>
+    </thead>
+	<tbody>	<tr>
+    	<td>正例</td>
+    	<td>TP(真正例)</td>
+    	<td>FN(假反例)</td>
+	</tr>
+	<tr>
+    	<td>反例</td>
+    	<td>FP(假正例)</td>
+    	<td>TN(真反例)</td>
+	</tr>
+</tbody></table>
+
+
+
 
 
 ## 注意

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="vender/themes/theme-simple.css">
   <!--渲染定制-->
   <link rel="stylesheet" href="vender/themes/theme-simple-custom.css">
+ <!-- <link rel="stylesheet" href="vender/themes/css-v1.3.css"> -->
 </head>
 <body>
   <div id="app"></div>
@@ -17,9 +18,10 @@
     window.$docsify = {
       name: '在线文档系统',
 	  loadSidebar: true, //设置为 true 后会加载 _sidebar.md 文件
+	  MaxLevel: 1,
 	  subMaxLevel: 3,   //自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能。
 	  loadNavbar: true,
-	  relativePath: true,//可以使用相对路径
+	  relativePath: true,//可以使用相对路径，目前并未成功
 	  auto2top: true,	//切换页面后是否自动跳转到页面顶部。    
 	  alias: {
 		'/':'/zh-cn/',

@@ -8,6 +8,21 @@
 
 <https://jhildenbiddle.github.io/docsify-themeable/#/>
 
+###CSS定制
+图片居中设置
+```bash
+.markdown-section img{
+	max-width: 100%;
+	//垂直居中
+	vertical-align: middle;
+	//水平居中
+	margin: 0 auto;
+	display: block
+	/*block 块元素，前后换行，设置为此值事，水平居中才会生效；inline 行内元素，前后不换行，默认值*/
+	
+}
+```
+
 ## 插件说明
 
 此处介绍的插件，详细介绍可参考[docsify官方文档](<https://docsify.js.org/#/zh-cn/awesome?id=plugins>)。
@@ -110,8 +125,6 @@ module.exports = {
 ```sh
 npm run convert
 ```
-
-#### FAQs
 
 > [!Tip]
 >
