@@ -26,7 +26,7 @@ size=100
 
 size=40%
 
-![40%](../../img/timg.jpg   ':size=100%')
+![40%](../../img/timg.jpg   ':size=40%')
 
 #### 第二种方法：
 
@@ -34,7 +34,7 @@ size=40%
 
 `<img src="图片路径" alt="替代文本" width="80%">`
 
-<img src="../../img/timg.jpg" alt="样图" width="80%">
+<img src="../../img/timg.jpg" alt="样图" width="70%">
 
 > [!Tip]
 >

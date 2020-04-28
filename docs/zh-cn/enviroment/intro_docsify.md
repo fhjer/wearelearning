@@ -6,13 +6,17 @@
 
 ## 官方文档
 
-<https://docsify.js.org/#/zh-cn>
+<https://docsify.js.org/#/zh-cn/>
 
 ## 安装docsify
 
 推荐安装 `docsify-cli` 工具，可以方便创建及本地预览文档网站。
 
+docsify需要本地先安装`node`, 如果没有安装node，可在snode官网选择对应操作系统下载安装：https://nodejs.org/zh-cn/
+
 ### 在线安装
+
+打开终端，通过以下命令，全局安装docsify-cli。
 
 ```bash
 npm i docsify-cli -g

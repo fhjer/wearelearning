@@ -8,8 +8,9 @@
 
 <https://jhildenbiddle.github.io/docsify-themeable/#/>
 
-###CSS定制
+### CSS定制
 图片居中设置
+
 ```bash
 .markdown-section img{
 	max-width: 100%;
@@ -85,8 +86,9 @@ cnmp intall
 
 ```js
 module.exports = {
-  contents: [ "docs/_sidebar.md" ], // array of "table of contents" files path
-  pathToPublic: "pdf/readme.pdf", // path where pdf will stored
+  mainMdFilename: "README.md", //将所有md文件合并成一个md
+  contents: [ "docs/_sidebar.md" ], // 目录路径和文件
+  pathToPublic: "pdf/readme.pdf", // 生成的pdf所在路径和文件名
   pdfOptions: "<options for puppeteer.pdf()>", // reference: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions
   removeTemp: true, // remove generated .md and .html or not
   emulateMedia: "screen", // mediaType, emulating by puppeteer for rendering pdf, 'print' by default (reference: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageemulatemediamediatype)
@@ -184,11 +186,9 @@ MD文件中页签插件，使用说明路径：
 <!-- docsify (latest v4.x.x)-->
 
 <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
-
 <!-- docsify-tabs (latest v1.x.x) -->
 
 <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-
 #### 使用说明
 
 > [!Note]
