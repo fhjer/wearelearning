@@ -14,14 +14,14 @@
 ```css
 .markdown-section img{
 	max-width: 100%;
-	//垂直居中
+    /*阴影设置*/
+	box-shadow: 0px 0px 15px #888888;
+	/*垂直居中 正文不需要这个*/
 	vertical-align: middle;
-	//水平居中
+	/*水平居中 尝试后发现无作用*/
 	margin: 0 auto;
 	/*block 块元素，前后换行，设置为此值事，水平居中才会生效；inline 行内元素，前后不换行，默认值*/
-	display: block;
-	/*阴影设置*/
-	box-shadow: 0px 0px 15px #888888;
+	display: block;	
 }
 ```
 
