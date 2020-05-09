@@ -53,10 +53,12 @@ C:\Program Files\nodejs\node_global\node_modules
 
 1. 创建文件：`.docsifytopdfrc.<js|json|yaml>`。
 
+   1)  若在文档根目录（即`docs`）下创建该文件，则以`json`文件为例，其内容应为：
+
    
 
    ```json
-   1) 若在文档根目录（即`docs`）下创建该文件，则以json文件为例，其内容应为：
+   
    {
      "pathToStatic":"static"      //合并生成的md文件的存放路径及文件夹名称
      "mainMdFilename": "TEST-documentation.md",   //合并生成的md文件，在static文件夹下
@@ -64,14 +66,29 @@ C:\Program Files\nodejs\node_global\node_modules
      "contents": "zh-cn/_sidebar.md",   //文档目录获取，按_sidebar.md文件中列出的文件生成
      "pathToPublic": "pdf/TEST-documentation.pdf", //生成的pdf文件存放路径及文件名
      "pdfOptions": {
-       "format": "A4"
+       "format": "A4", //纸张大小
+       "margin": {   //页边距设置
+   		"top": "2cm",
+   		"right": "1.8cm",
+   		"bottom": "2cm",
+   		"left": "1.8cm"
+    	 },
+   	"displayHeaderFooter" : true    //页眉页脚显示，缺省关闭，开启后，页眉缺省展示为文档标题和日期，页脚展示URL和页码，有headerTemplate和footerTemplate，但是没找到正确的设置方法。
      },
      "emulateMedia": "screen",
      "pathToDocsifyEntryPoint": "."
    }
-   注意：在`docs`文件夹下创建该文件，能够直接成功生成PDF，但是页面排版比较紧凑。
+   ```
+
+   > [!Tip]
+   >
+   > 在`docs`文件夹下创建该文件，能够直接成功生成PDF，但是页面排版比较紧凑。
+
    
+
    2) 若在`docs`外部创建，则应配置为：
+
+   ```json
    {
      "pathToStatic":"static"      //合并生成的md文件的存放路径及文件夹名称
      "mainMdFilename": "TEST-documentation.md",   //合并生成的md文件，在static文件夹下
@@ -84,12 +101,17 @@ C:\Program Files\nodejs\node_global\node_modules
      "emulateMedia": "screen",
      "pathToDocsifyEntryPoint": "./docs"
    }
-   注意：此时可生成合并后的md，但不能直接成功生成正确的PDF，因为生成的PDF中无内容。这是由于'docsify-pdf-converter\src\render.js'中获取的发布路径如下：
-   const docsifyUrl = `http://localhost:${docsifyRendererPort}/#/${pathToStatic}/${mainMdFilenameWithoutExt}`;
-   解读后个人认为需要将生成的md文件放在docs文件夹下，但是此配置生成不知为何是在docs外部生成的，如果将 "pathToStatic":"static" "pathToStatic":"docs/static"，按代码解析的路径并不正确。
-   目前不知道怎么修改代码使得获取该路径与配置解耦合。
-   之前总是报错时，按照此配置生成的static文件夹却是在docs目录下，现在不知怎滴又不成了。
    ```
+
+   
+
+   > [!Tip]
+   >
+   > 此时可生成合并后的md，但不能直接成功生成正确的PDF，因为生成的PDF中无内容。这是由于'docsify-pdf-converter\src\render.js'中获取的发布路径如下：
+   > const docsifyUrl = `http://localhost:${docsifyRendererPort}/#/${pathToStatic}/${mainMdFilenameWithoutExt}`;
+   > 解读后个人认为需要将生成的md文件放在docs文件夹下，但是此配置生成不知为何是在docs外部生成的，如果将 "pathToStatic":"static" "pathToStatic":"docs/static"，按代码解析的路径并不正确。
+   > 目前不知道怎么修改代码使得获取该路径与配置解耦合。
+   > 之前总是报错时，按照此配置生成的static文件夹却是在docs目录下，现在不知怎滴又不成了。
 
    
 
@@ -115,7 +137,7 @@ C:\Program Files\nodejs\node_global\node_modules
 >
 > 如果是在docs外配置的参数文件，那么建议手动转换成PDF：由于使用了docsify-tabs、alerts等插件，建议修改掉tabs后，本地发布以下，然后通过浏览器打印生成PDF，这样就能转化插件引入的风格，否则会有代码。
 >
-> 另外：直接生成的PDF或浏览器另存为PDF时，不会生成目录；另存为PDF时，内部的一些链接会失效。
+> 另外：导出PDF时，不会生成目录；另存为PDF时，内部的一些链接会失效。表格无法调整，表格过大时，没办法复用标题行，禁止跨页断行等等。
 >
 > 如果直接用Typora导出PDF可以生成目录，但目录级别是错乱的。
 

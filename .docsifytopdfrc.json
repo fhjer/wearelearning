@@ -1,11 +1,11 @@
 {
-  "mainMdFilename": "TEST-documentation.md",  
-  "contents": "./docs/zh-cn/_sidebar.md",
-  "pathToPublic": "./pdf/onlineHelp.pdf", 
-  "pdfOptions": {
-  "format": "A4"
-  }, 
-  "removeTemp": true,
-  "emulateMedia": "screen",
-  "pathToDocsifyEntryPoint": "."
+    "contents": [
+      "docs/zh-cn/_sidebar.md"
+    ],
+    "pathToPublic": "pdf/readme.pdf",
+	"pathToStatic": "../static",
+    "removeTemp": false,
+    "emulateMedia": "screen",
+    "pathToDocsifyEntryPoint": "./docs",
+    "mainMdFilename": "readme.md"
 }

@@ -1,0 +1,16 @@
+/* Content
+============================================================================= */
+:root {
+    --content-max-width                 : 65em;
+    --code-theme-background             : #e3e3e3;
+    --code-theme-text                   : #e96900;
+}
+/* Sidebar
+============================================================================= */
+:root {
+    --sidebar-background                          : #151d2a;
+    --sidebar-nav-link-color                      : #ffffff;
+}
+/*.table-wrapper {
+   border: 1px solid #e3e3e3 !important;
+}*/

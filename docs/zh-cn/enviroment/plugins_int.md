@@ -9,20 +9,56 @@
 <https://jhildenbiddle.github.io/docsify-themeable/#/>
 
 ### CSS定制
-图片居中设置
+#### 图片设置
 
-```bash
+```css
 .markdown-section img{
 	max-width: 100%;
 	//垂直居中
 	vertical-align: middle;
 	//水平居中
 	margin: 0 auto;
-	display: block
 	/*block 块元素，前后换行，设置为此值事，水平居中才会生效；inline 行内元素，前后不换行，默认值*/
-	
+	display: block;
+	/*阴影设置*/
+	box-shadow: 0px 0px 15px #888888;
 }
 ```
+
+#### 表格设置
+
+设置表格为全边框显示，并将表格灰白相间显示，请参见`theme-simple-custom.css`+下面代码。
+
+更多定制介绍请参见[docsify-themeable官方文档](https://jhildenbiddle.github.io/docsify-themeable/#/customization)。
+
+```css
+.markdown-section th{
+	font-weight:var(--table-head-font-weight);
+	color:var(--strong-color);
+	/*表头边框设置*/
+	border-color:var(--table-cell-border-color);
+	border-style:solid;
+	border-width:var(--table-cell-border-width, 0)
+}
+.markdown-section td{
+	border-color:var(--table-cell-border-color);
+	border-style:solid;
+	border-width:var(--table-cell-border-width, 0)
+	}
+.markdown-section tbody{
+	border-color:var(--table-body-border-color);
+	border-style:solid;
+	border-width:var(--table-body-border-width, 0)
+	}
+.markdown-section tbody tr:nth-child(odd){
+	background:var(--table-row-odd-background)
+	}
+.markdown-section tbody tr:nth-child(even){
+	background:var(--table-row-even-background)
+	}
+```
+
+
 
 ## 插件说明
 
@@ -89,7 +125,9 @@ module.exports = {
   mainMdFilename: "README.md", //将所有md文件合并成一个md
   contents: [ "docs/_sidebar.md" ], // 目录路径和文件
   pathToPublic: "pdf/readme.pdf", // 生成的pdf所在路径和文件名
-  pdfOptions: "<options for puppeteer.pdf()>", // reference: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions
+  pdfOptions: "<options for puppeteer.pdf()>", 
+    // reference: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions
+    //中文路径：https://zhaoqize.github.io/puppeteer-api-zh_CN/#?product=Puppeteer&version=v1.19.0&show=api-pagepdfoptions
   removeTemp: true, // remove generated .md and .html or not
   emulateMedia: "screen", // mediaType, emulating by puppeteer for rendering pdf, 'print' by default (reference: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageemulatemediamediatype)
 }
