@@ -10,7 +10,7 @@ win10系统
 
 1. 以管理员身份运行`cmd.exe`，执行安装命令：
 
-   `npm install --save-dev docsify-pdf-converter@@2.1.0-beta.0 -g`或`npm i docsify-pdf-converter -g`
+   `npm install --save-dev docsify-pdf-converter@2.1.0-beta.0 -g`或`npm i docsify-pdf-converter -g`
 
    其中，参数`--save-dev`的含义是代表把安装包信息写入package.json文件的`devDependencies`字段中，包安装在指定项目的node_modules文件夹下；若在安装插件后加上`@版本号`可以指定安装的版本，否则默认安装最新正式版本。
    

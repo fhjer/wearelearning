@@ -1,0 +1,20 @@
+{
+  "pathToStatic": "static",
+  "mainMdFilename": "DB.md",  
+  "contents": "_sidebar_DB.md",
+  "pathToPublic": "pdf/DB.pdf", 
+  "pdfOptions": {
+  "format": "A4",
+  "margin": {
+	"top": "2cm",
+	"right": "1.8cm",
+	"bottom": "2cm",
+	"left": "1.8cm"
+  },
+  
+
+  }, 
+  "removeTemp": false,
+  "emulateMedia": "screen",
+  "pathToDocsifyEntryPoint": "."
+}
