@@ -14,7 +14,7 @@ MarkDown的表格语法无法实现单元格合并，可使用HTML的`<table></t
 <table frame="border" border="1">
     <thead>
         <tr>
-        	<th rowspan="2">真实情况</th>
+        	<th rowspan="2"  valign="middle"  align="center">真实情况</th>
         	<th colspan="2" align="center">预测结果</th>
     	</tr>
         <tr>
@@ -33,6 +33,7 @@ MarkDown的表格语法无法实现单元格合并，可使用HTML的`<table></t
     	<td>TN(真反例)</td>
 	</tr>
 </tbody></table>
+
 
 ## 单元格宽度调整
 
